@@ -1,0 +1,172 @@
+/* Meyer's CSS Reset start */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* Meyer's CSS Reset einde */
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: #adf;
+}
+
+header {
+	background: brown;
+	padding: 20px 30px;
+}
+
+h1 {
+	font-size: 1.5em;
+	color: #fff;
+}
+
+main {
+	background: #adf;
+	font-size: 1em;
+	padding: 20px;
+}
+
+.somvak { 
+	background-color: #69c;
+	color: #fff;
+	grid-area: SOM; 
+	font-size: 5em;
+	text-align: center;
+}
+.antwoordvak {
+	background-color: #fff;
+	color: #000;
+	grid-area: ANTW; 
+	font-size: 3.8em;
+	text-align: center;
+}
+.scorevak { 
+	background-color: #ffffe4;
+	grid-area: SCORE; 
+	font-size: 1.4em;
+}
+.feedbackvak { 
+	background-color: #eaffff;
+	grid-area: FBCK; 
+	font-size: 1.6em;
+	padding: 0 !important;
+	text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'SOM SOM ANTW SCORE SCORE'
+    'SOM SOM ANTW SCORE SCORE'
+    'FBCK FBCK FBCK SCORE SCORE';
+  grid-gap: 10px;
+  background-color: #adf;
+  padding: 10px;
+}
+
+.grid-container > div {
+  padding: 20px;
+}
+
+.input {
+	border: none;
+	font-size: 1em;
+	width: 100px;
+}
+
+input[type=number]:focus, textarea:focus {
+	outline: none;
+}
+
+input::-webkit-inner-spin-button, 
+input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.submit {
+	background: #eaffff;
+	border: none;
+	font-size: 1em;
+	width: 80%;
+	padding: 20px;
+}
+
+.submit:focus {
+	outline: 0;
+}
+
+footer {
+   background-color: #69c;
+   bottom: 0;
+   color: white;
+   left: 0;
+   padding: 20px;
+   position: fixed;
+   text-align: center;
+   width: 100%;
+}
+
+/* stijlen voor mobiel */
+
+@media only screen and (max-width: 700px) {
+	.grid-container {
+		grid-template-areas:
+		'SOM SOM ANTW'
+		'FBCK FBCK FBCK'
+		'SCORE SCORE SCORE'
+		'SCORE SCORE SCORE';
+	}
+
+	header {
+		padding: 5px 10px;
+	}	
+
+	h1 {
+		font-size: 1em;
+		text-transform: uppercase;
+	}
+
+	.somvak, .antwoordvak {
+		font-size: 2.2em;
+	}
+
+	.scorevak {
+		font-size: 0.9em;
+	}
+
+	.feedbackvak {
+		font-size: 0.9em;
+	}
+
+	.submit {
+		font-size: 0.9em;
+	}
+
+	.grid-container > div {
+  		padding: 10px;
+	}
+
+}
